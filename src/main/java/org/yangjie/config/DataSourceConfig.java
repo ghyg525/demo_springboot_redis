@@ -16,7 +16,7 @@ public class DataSourceConfig {
 	 */
 	@Bean(name="dataSource")
 	@ConfigurationProperties(prefix="dataSource")
-	public DataSource initDataSource() {
+	public DataSource initDataSource() { // spring默认使用tomcat连接池
 		return DataSourceBuilder.create().build();
 	}
 	

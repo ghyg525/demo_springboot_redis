@@ -5,16 +5,18 @@
 	<groupId>org.yangjie</groupId>
 	<artifactId>springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>demo_springboot</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<java.version>1.8</java.version>
+		<start-class>org.yangjie.Application</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<parent>
+	<parent><!-- spring boot通用配置 -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.7.RELEASE</version>
@@ -22,39 +24,83 @@
 	
 	<dependencies>
 	
-		<dependency>
+		<dependency><!-- spring web通用配置 -->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
-		<dependency><!-- spring jdbc 操作数据库 -->
+		<dependency><!-- 用于内嵌tomcat解析jsp -->
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        
+        <dependency><!-- jsp中使用jstl -->
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+		
+		<dependency><!-- 使用spring声明式事务管理 -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 		</dependency>
 		
-		<dependency><!-- 使用tomcat自带连接池 -->
+		<dependency><!-- tomcat 连接池-->
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jdbc</artifactId>
 		</dependency>
 		
-		<dependency>
+		<dependency><!-- mysql驱动 -->
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+	
+		<dependency><!-- mybatis -->
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		
+		<dependency><!-- spring操作mybatis插件 -->
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.3</version>
+		</dependency>
 		
 		
-		<dependency>
+		<dependency><!-- 用于spring测试 -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 			
-		<dependency>
+		<dependency><!-- 用于单元测试 -->
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
 	</dependencies>
+	
+	
+	<build>
+	
+		<plugins>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration><!-- 跳过测试 -->
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
 
 </project>

@@ -1,20 +1,12 @@
 package org.yangjie.dao;
 
-import javax.annotation.Resource;
-
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.yangjie.entity.User;
 
-@Repository
-public class UserDao {
+public interface UserDao {
 	
-	@Resource
-	private JdbcTemplate jdbcTemplate;
-	
-	public User select(int userid) {
-		return jdbcTemplate.queryForObject("select * from user where userid=?", new BeanPropertyRowMapper<User>(User.class), userid);
-	}
+	@Select("select * from user where username=#{username} and password=#{password}")
+	public User select(@Param("username")String username, @Param("password")String password);
 	
 }
