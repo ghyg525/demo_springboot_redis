@@ -15,74 +15,65 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<parent><!-- spring boot通用配置 -->
+	<parent><!-- spring boot父级依赖, 定义了常用包的version -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.7.RELEASE</version>
+		<version>1.4.0.RELEASE</version>
 	</parent>
 	
 	<dependencies>
-	
-		<dependency><!-- spring web通用配置 -->
+		<dependency><!-- 核心starter, 包含自动配置/日志/yaml配置文件支持等 -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency><!-- web项目开发支持, 包含tomcat和springmvc等 -->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
 		<dependency><!-- 用于内嵌tomcat解析jsp -->
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
-        
         <dependency><!-- jsp中使用jstl -->
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
-		
 		<dependency><!-- mysql驱动 -->
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		
 		<dependency><!-- tomcat 连接池-->
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jdbc</artifactId>
 		</dependency>
-		
 		<dependency><!-- 使用spring声明式等 -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 		</dependency>
-	
 		<dependency><!-- mybatis -->
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.3.0</version>
 		</dependency>
-		
 		<dependency><!-- spring操作mybatis插件 -->
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.3</version>
 		</dependency>
-		
-		
+
 		<dependency><!-- 用于spring测试 -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-			
 		<dependency><!-- 用于单元测试 -->
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 	
-	
 	<build>
-	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -104,7 +95,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
 	</build>
 
 </project>

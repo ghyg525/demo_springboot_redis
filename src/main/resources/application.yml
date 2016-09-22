@@ -1,3 +1,8 @@
+##服务配置
+server:
+  port: 8080
+
+
 ##数据库配置
 dataSource:
   driverClassName: com.mysql.jdbc.Driver
@@ -14,9 +19,6 @@ dataSource:
   removeAbandoned: true           ##是否进行无用链接回收, 默认: false
   removeAbandonedTimeout: 60    ##链接有效期,超时将被回收(秒), 默认: 60
 
-##服务配置
-server:
-  port: 8080
 
 ##日志配置
 logging:
