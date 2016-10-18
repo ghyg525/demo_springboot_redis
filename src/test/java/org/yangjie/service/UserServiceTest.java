@@ -3,14 +3,18 @@ package org.yangjie.service;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.yangjie.BaseTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.context.junit4.SpringRunner;
 
-public class UserServiceTest extends BaseTest{
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+public class UserServiceTest {
 
 	@Autowired
 	private UserService userService;
-	
 	
 	@Test
 	public void testGet() {

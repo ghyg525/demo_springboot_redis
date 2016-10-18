@@ -14,6 +14,11 @@ spring:
     validationInterval: 30000         ##验证数据库连接频率(毫秒), 默认: 30000
     removeAbandoned: true           ##是否进行无用链接回收, 默认: false
     removeAbandonedTimeout: 60    ##链接有效期,超时将被回收(秒), 默认: 60
+    
+    
+#mybatis配置
+mybatis: 
+  config: classpath:mybatis.xml
 
 
 ##服务配置
