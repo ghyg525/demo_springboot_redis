@@ -1,6 +1,5 @@
 package org.yangjie;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @EnableAutoConfiguration 开启根据依赖包进行自动配置
  */
 @SpringBootApplication
-@MapperScan("org.yangjie.dao") // 扫描dao接口, 自动生成代理实现
 public class Application {
 	
 	private static Logger logger = LoggerFactory.getLogger(Application.class);
