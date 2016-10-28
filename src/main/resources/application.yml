@@ -1,25 +1,3 @@
-##数据库配置
-spring: 
-  datasource: 
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test
-    username: root
-    password: admin
-    initialSize: 3        ##初始化连接数, 默认: 10
-    maxActive: 10     ##连接池中保留的最大连接数, 默认: 100
-    minIdle: 8          ##最小空闲连接数量, 默认: initialSize
-    maxIdle: 5         ##最大空闲连接数量, 默认: maxActive
-    testOnBorrow: true    ##访问前验证链接有效性, 默认: false
-    validationQuery: SELECT 1       ##验证数据库连接的有效性sql, 默认: null
-    validationInterval: 30000         ##验证数据库连接频率(毫秒), 默认: 30000
-    removeAbandoned: true           ##是否进行无用链接回收, 默认: false
-    removeAbandonedTimeout: 60    ##链接有效期,超时将被回收(秒), 默认: 60
-    
-    
-#mybatis配置
-mybatis: 
-  config: classpath:mybatis.xml
-
 
 ##服务配置
 server:

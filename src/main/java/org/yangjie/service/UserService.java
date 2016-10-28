@@ -1,19 +1,22 @@
 package org.yangjie.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yangjie.dao.UserDao;
-import org.yangjie.entity.User;
 
 @Service
 public class UserService {
 	
-	@Autowired
-	private UserDao userDao;  
-	
-	
-	public User get(String username, String password) {
-		return userDao.select(username, password);
+	/**
+	 * 登录
+	 * @author YangJie [2016年10月28日 下午2:17:58]
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	public boolean login(String username, String password) {
+		if ("1".equals(username) && "1".equals(password)) {
+			return true;
+		}
+		return false;
 	}
 	
 }

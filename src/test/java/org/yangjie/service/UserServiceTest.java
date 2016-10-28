@@ -18,7 +18,7 @@ public class UserServiceTest {
 	
 	@Test
 	public void testGet() {
-		assertNotNull(userService.get("1","1"));
+		assertNotNull(userService.login("1","1"));
 	}
 
 }
