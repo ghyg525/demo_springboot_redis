@@ -1,19 +1,20 @@
 
-##redis配置 org.springframework.boot.autoconfigure.data.redis.RedisProperties
+## redis配置 
+## org.springframework.boot.autoconfigure.data.redis.RedisProperties
 spring: 
   redis: 
     host: 192.168.125.15
     port: 6379
     database: 5
     password: 
-    timeout: 10000
+    timeout: 1000
     pool: 
       minIdle: 0
       maxIdle: 8
       maxActive: 8
       maxWait: -1
 
-##日志配置
+## 日志配置
 logging:
   level:
     org:

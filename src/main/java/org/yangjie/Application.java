@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 程序入口, 启动器
- * 此注解等同与以下三个注解:
+ * @SpringBootApplication 等同与以下三个注解:
  * @Configuration 此类为配置类
  * @ComponentScan 扫描当前目录下所有包
  * @EnableAutoConfiguration 开启根据依赖包进行自动配置
